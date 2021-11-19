@@ -1,0 +1,47 @@
+.about-page {
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    .about-title i {
+        // code below were generated from https://www.cssportal.com/css-text-gradient-generator/
+        background: #FF33FF;
+        background: -webkit-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+        background: -moz-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+        background: linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .about-text {
+        width: 65%;
+        margin: 0 auto;
+        display: block;
+        padding: 1rem 0;
+        line-height: 1.5;
+
+        p:nth-child(2){
+            margin-bottom: 4rem;
+        }
+
+        p:nth-child(3){
+            font-size: .8rem;
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq($tablet) {
+        .about-text {
+            width: 50%;
+        }
+
+    }
+}

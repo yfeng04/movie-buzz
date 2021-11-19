@@ -1,0 +1,133 @@
+// Movies
+.movies-container {
+    padding: 1rem;
+
+    .movie-card {
+        border-radius: 10px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        gap: 1rem;
+        margin: 1.5rem .5rem;
+
+        img {
+            border-radius: 5px;
+        }
+
+        .movie-info-container {
+            p {
+                font-size: .85rem;
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            h3 {
+                font-size: .9rem;
+                margin-bottom: .25rem;
+            }
+
+            .date-rating-row {
+               @include flex-layout-row;
+               padding-right: .75rem;
+            }
+
+            .rating {
+                text-align: right;
+                font-size: 1.2rem;
+            }
+
+            .more-info-btn {
+                display: block;
+                width: 80px;
+                margin-top: .5rem;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 15px;
+                border: 1.5px solid white;
+        
+                p {
+                    padding: 3px 0;
+                    text-align: center;
+                }
+        
+                &:hover {
+                    border: none;
+                    background: #FF33FF;
+                    background: -webkit-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+                    background: -moz-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+                    background: linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+                }
+            }
+        }
+
+        .fav-btn {
+            position: absolute;
+            top: .25rem;
+            left: .25rem;
+            z-index: 10;
+        }
+
+    }
+
+    @include mq($tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: em(14);
+        margin-bottom: 0;
+
+        //movie card desktop styling
+        .movie-card {
+            display: block;
+            background: rgb(3, 3, 3);
+            background: linear-gradient(0deg, rgba(3, 3, 3, 1) 0%, rgba(255, 252, 252, 1) 100%);
+
+            img {
+                width: 100%;
+                min-height: 300px;
+                object-fit: cover;
+                border-radius: 0;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .movie-info {
+                padding: .5rem .5rem 1rem;
+
+                h3, p {
+                    font-size: 1rem;
+                }
+            }
+
+            //overlay text styling
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: rgba(black, 0.75);
+
+                .overlay-text {
+                    padding: 3rem 1rem;
+                    line-height: 1.4;
+                }
+            }
+
+            &:hover .overlay {
+                opacity: 1;
+            }
+        }
+
+    }
+
+    @include mq($desktop) {
+        padding: em(20);
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
+
+}

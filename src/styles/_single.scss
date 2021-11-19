@@ -1,0 +1,105 @@
+.single-movie {
+
+    li {
+        list-style: none;
+    }
+
+    img {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .movie-info {
+        @include flex-center;
+        align-items: center;
+        
+        p {
+            margin: 0 1rem;
+        }
+    }
+
+    .rating-fav-row {
+        @include flex-center;
+        padding: 1rem;
+
+        .rating {
+            margin-right: 1rem;
+        }
+
+        .fav-btn-container {
+            @include flex-center;
+            width: 120px;
+            //margin: 0 auto;
+            border-radius: 15px;
+            padding: .3rem .5rem;
+            background: #FF33FF;
+            background: -webkit-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+            background: -moz-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+            background: linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+    
+            .fav-btn {
+                background-color: transparent;
+                padding: 0 .45rem 0 0;
+            }
+        }
+    }
+
+    .overview {
+        padding: 1.5rem 2rem;
+        line-height: 1.4;
+    }
+
+    
+
+    @include mq($desktop) {
+       
+        display: flex;
+        align-items: flex-start;
+
+        .movie-poster {
+            width: 45%;
+        }
+
+        .movie-info-container {
+            width: 50%;
+            
+            h2 {
+                text-align: left;
+            }
+
+            .movie-info {
+                justify-content: flex-start;
+
+                p {
+                    margin: 0;
+                }
+
+                p:first-child{
+                    margin-right: 1rem;
+                }
+            }
+
+            .rating-fav-row {
+                justify-content: flex-start;
+                padding: 1rem 0;
+            }
+
+            .overview {
+                padding: 1.5rem 1.5rem 1.5rem 0;
+            }
+        }
+        
+    }
+    
+}

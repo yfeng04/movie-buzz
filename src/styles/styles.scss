@@ -1,0 +1,26 @@
+// Main Styles
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+
+
+// Utilities
+@import './functions';
+@import './variables';
+@import './mixins';
+
+// Resets
+@import 'reset';
+@import 'type';
+
+// Components
+@import 'body';
+@import 'wrapper';
+@import 'header';
+@import 'nav';
+@import 'movies';
+@import 'footer';
+@import 'single';
+@import 'about';
+@import 'favourite';
+@import 'main';
