@@ -4,6 +4,7 @@ import { API_KEY } from '../globals/globals';
 import SingleMovie from '../components/SingleMovie';
 
 const PageSingle = () => {
+    window.scrollTo(0, 0);
 
     const [movie, setMovie] = useState(null);
 

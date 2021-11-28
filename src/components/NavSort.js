@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 function NavSort() {
+
     return (
         <nav className="nav-sort">
             <ul>

@@ -1,6 +1,8 @@
 import tmdbIcon from '../images/tmdb.svg';
 
 function PageAbout() {
+    window.scrollTo(0, 0);
+    
     return (
         <section className="about-page">
             <div className="about-title">

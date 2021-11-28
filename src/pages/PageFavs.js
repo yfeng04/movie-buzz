@@ -3,6 +3,8 @@ import useGlobal from '../store/globalAppState';
 import MovieCard from '../components/MovieCard';
 
 function PageFavs() {
+    window.scrollTo(0, 0);
+    
     const globalStateAndActions = useGlobal();
     const globalState = globalStateAndActions[0];
 

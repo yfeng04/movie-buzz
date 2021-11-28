@@ -1,37 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import NavSort from '../components/NavSort';
 import Movies from '../components/Movies';
-import { API_TOKEN } from '../globals/globals';
 
 function PageHome({ sort }) {
 
-    const [moviesData, setMoviesData] = useState(null);
+    const [pageNum, setPageNum] = useState(1);
+    
+    const showMoreMovies = () => {
+        setPageNum ((preValue)=> preValue + 1);
+    }
 
-    useEffect(() => {
-
-        const fetchMovies = async () => {
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${sort}?language=en-US&page=1`, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + API_TOKEN
-                  }
-            });
-            const moviesData = await res.json();
-            const first12Movies = moviesData.results.splice(0,12); 
-            console.log(first12Movies);
-            setMoviesData(first12Movies);
-          }
-      
-          fetchMovies();
-
-    }, [sort]);
+    const resetMovies = () => {
+        setPageNum (1);
+    }
 
     return (
         <section className="home-page">
-            <NavSort />
-            {moviesData !== null && 
-            <Movies moviesData={moviesData}  />}
+            <NavSort/>
+            <div className="movies-container">
+                <Movies sort={sort} pageNum={pageNum} resetMovies={resetMovies} />
+            </div>
+            <button onClick={showMoreMovies} className="loadmore">Load More</button>
         </section>
     )
 }

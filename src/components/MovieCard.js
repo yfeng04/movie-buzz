@@ -37,8 +37,8 @@ function MovieCard({ movie }) {
 
                 <div className="overlay">
                     <div className="overlay-text">
-                        <p>{movie.overview.length > 200 ?
-                        `${movie.overview.substring(0, 200)}...` : movie.overview}</p>
+                        <p>{movie.overview.length > 280 ?
+                        `${movie.overview.split(' ').slice(0, 50).join(' ')}...` : movie.overview}</p>
                         <Link className ="more-info-btn" to={`/single-movie/${movie.id}`}><p>More Info</p></Link>
                     </div>
                 </div>
