@@ -5,14 +5,17 @@ const MobileNavigation = () => {
 
     const [open, setOpen]= useState(false);
 
-    const hamburger = <i onClick={()=> setOpen(!open)} class="fas fa-bars hamburger"></i>
-    const closeicon = <i onClick={()=> setOpen(!open)} class="fas fa-times closeicon"></i>
-  
+    const hamburger = <i onClick={()=> setOpen(!open)} className="fas fa-bars hamburger"></i>
+    const closeicon = <i onClick={()=> setOpen(!open)} className="fas fa-times closeicon"></i>
+    
+    const closeMenu = () => {
+        setOpen(!open);
+    }
     
     return (
         <nav className='mobile-navigation'>
             {open ? closeicon : hamburger}
-            {open && <NavMain />}
+            {open && <NavMain closeMenu = {closeMenu}/>}
         </nav>
     );
 }

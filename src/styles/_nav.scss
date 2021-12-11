@@ -16,12 +16,18 @@ nav {
         text-transform: uppercase;
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
-        padding: 1rem;
+        font-size: 1.1rem;
+        padding: .8rem;
         opacity: .65;
+        transition: all .4s ease-in-out;
 
         &:hover, &.active {
             opacity: 1;
         }
+    }
+
+    .search-icon {
+        font-size: 1.2rem;
     }
 
     //hide desktop navigation
@@ -31,20 +37,20 @@ nav {
 
     //mobile navigation
     .mobile-navigation{
-        //position: relative;
+        position: relative;
         
         .hamburger, .closeicon {
             font-size: 1.5rem;
-            text-align: right;
-            position: absolute;
-            top: -3.8rem;
-            right: 0;
             cursor: pointer;
+            position: absolute;
+            right: .75rem;
+            top: -5.5rem;
         }
 
         ul {
             @include flex-column;
-            height: 60vh;
+            width: 100%;
+            height: 50vh;
             margin: 0;
             padding: 0;
             list-style: none;
@@ -53,8 +59,12 @@ nav {
             right: 0;
             top: -2rem;
             z-index: 1000;
-            background-color: black;
+            background-color: $bgColour;
             text-align: center;
+
+            li {
+                padding: .5rem 0;
+            }
         }
 
        
@@ -77,66 +87,74 @@ nav {
             }
         }
 
-        a {
-            margin: 0 1rem;
-            padding: 0;
-        }
     }
 
 }
 
 
-// sorting navigation
-.nav-sort {
+// Sorting dropdown menu
+// remove default styles
+// code modified from https://www.sliderrevolution.com/resources/css-select-styles/
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    color: $textColor;
+  
+    // Stack above custom arrow
+    z-index: 1;
+  
+    // Remove dropdown arrow in IE10 & IE11
+    &::-ms-expand {
+      display: none;
+    }
+  
+    outline: none;
+}
 
-    margin: 0 1rem;
+.select {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+    color: $textColor;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        @include flex-center;
-
+    select, &::after {
+        grid-area: select;
     }
 
-    li {
-        width: 120px;
-        margin: .25rem;
-    }
+    width: 200px;
+    margin: 0 auto;
 
-    a {
-        font-size: 1rem;
-        padding: 0.25rem 1rem;
-        background-color: grey;
-        border-radius: 20px;
+    border: 2px solid $textColor;
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
 
-        &:hover {
-            color: #a1fafa;
-        }
-        
-        &.active {
-            color: darken($highlightColor, 8);
-        }
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+
+    // Custom arrow
+    &:not(.select--multiple)::after {
+        content: "";
+        justify-self: end;
+        width: 0.8em;
+        height: 0.5em;
+        background-color: $textColor;
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     }
 
     @include mq($tablet) {
 
-        li {
-            width: 22%;
-        }
-        a {
-            margin: 0 .25rem;
-        }
-    }
+        margin-left: 2rem;
+        width: 250px;
 
-    @include mq($desktop) {
-
-        li {
-            width: 15%;
-        }
-
-        a {
-            margin: 0 1.5rem;
-        }
     }
 }

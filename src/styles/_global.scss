@@ -1,9 +1,18 @@
 // Body
 body {
-    background-color: black;
+    background-color: $bgColour;
+    font-family: 'Source Sans Pro', sans-serif;
     color: $textColor;
-    
 
+    a {
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+    }
+    
     .fav-btn {
         background-color: rgba(black, 0.4);
         border: none;
@@ -15,7 +24,7 @@ body {
         }
 
         .fa-heart {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: $textColor;
         }
 
@@ -29,14 +38,25 @@ body {
 
 }
 
-// Main
-main {
-    min-height: 100vh;
-}
 
-// Wrapper
+// Layout
 .wrapper {
     max-width: 120rem;
+    min-height: 100vh;
     margin: 0 auto;
-    
+    display: flex;
+    flex-direction: column;
+
+    // @include mq($tablet){
+    //     padding: 0 1rem;
+    // }
+
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+footer{
+    margin-top: auto;
 }

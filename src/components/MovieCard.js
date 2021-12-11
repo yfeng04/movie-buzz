@@ -1,17 +1,9 @@
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from '../components/FavButton';
+import { formatDate, formatRating } from '../utilities/Format';
 
 function MovieCard({ movie }) {
-
-    function formatRating (rating){
-        if (rating.toString().length === 1){
-            return rating.toString()+ ".0";
-        } else {
-            return rating;
-        }
-        
-    }
 
     return (
         <div className="movie-card">
@@ -29,7 +21,7 @@ function MovieCard({ movie }) {
                 <div className="movie-info">
                     <h3>{movie.title}</h3>
                     <div className="date-rating-row">
-                        <p>{movie.release_date ? movie.release_date : "Released date is not available"}</p>
+                        <p>{movie.release_date ? formatDate(movie.release_date) : "Released date is not available"}</p>
                         <p className="rating">{movie.vote_average !== null && formatRating(movie.vote_average)}</p>
                     </div>
                    

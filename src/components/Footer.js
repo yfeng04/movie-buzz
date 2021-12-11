@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer >
-            <p>&copy; 2021 Yingying Feng</p>
+            <p>&copy; {new Date().getFullYear()} Movie Buzz | Created by: Yingying Feng</p>
         </footer>
     )
 }

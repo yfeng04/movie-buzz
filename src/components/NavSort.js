@@ -1,24 +1,27 @@
-import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { useState } from 'react';
 
 function NavSort() {
 
+    const [option, setOption] = useState(false);
+
+    const onChange = (e) => {
+        e.preventDefault();
+        setOption(e.target.value);
+    }
+
     return (
-        <nav className="nav-sort">
-            <ul>
-                <li>
-                    <NavLink to='/sort/popular'>Popular</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/sort/top-rated'>Top Rated</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/sort/now-playing'>Now Playing</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/sort/upcoming'>Upcoming</NavLink>
-                </li>
-            </ul>
-        </nav>
+        <>
+        {option && <Redirect to={option}/>}
+        <form className='select'>
+            <select onChange = {onChange} name="sort-menu" id="sort-menu">
+                <option value='/sort/popular'>Popular</option>
+                <option value='/sort/top-rated'>Top Rated</option>
+                <option value='/sort/now-playing'>Now Playing</option>
+                <option value='/sort/upcoming'>Upcoming</option>
+            </select>
+        </form>
+        </>
     )
 }
 

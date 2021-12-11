@@ -39,35 +39,6 @@
     margin: 0;
 }
 
-//styles for a 
-@mixin a-base {
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: $line-height;
-    color: map-get($colors, body-text);
-    padding: 1rem;
-}
-
-//2-col grid layout
-@mixin grid-2-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    
-}
-
-//3-col grid layout
-@mixin grid-3-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    
-}
-
-
-
 
 // Media Queries
 @mixin mq($w){

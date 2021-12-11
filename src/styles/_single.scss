@@ -4,34 +4,55 @@
         list-style: none;
     }
 
-    img {
-        display: block;
-        width: 40%;
-        margin: 0 auto;
-        border-radius: 20px;
-    }
-
     h2 {
-        text-align: center;
-        margin: 1rem 0;
+        text-align: left;
+        margin: 2rem 1.5rem .5rem;
+        font-size: 1.5rem;
     }
 
     p {
         margin: 0;
     }
 
+    .movie-images {
+        position: relative;
+
+        .backdrop {
+            display: block;
+            width: 100%;
+            position: relative;
+            opacity: .3;
+        }
+
+        
+        .poster {
+            display: block;
+            width: 35%;
+            border-radius: 15px;
+            position: absolute;
+            z-index: 10;
+            top: 50%;  
+            left: 1.5rem;                      
+            transform: translate(0, -50%);
+        }
+    }
+
+
     .movie-info {
-        @include flex-center;
-        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 1.5rem;
         
         p {
-            margin: 0 1rem;
+            margin-right: 1rem;
+            align-self: flex-start;
         }
     }
 
     .rating-fav-row {
         @include flex-center;
-        padding: 1rem;
+        justify-content: flex-start;
+        padding: 1rem 1.5rem;
 
         .rating {
             margin-right: 1rem;
@@ -55,31 +76,55 @@
         }
     }
 
+    .genres {
+        margin-bottom: 1rem;
+        ul {
+            @include flex-center;
+            justify-content: flex-start;
+            padding: 0 1.5rem;
+     
+            li {
+                padding: .15rem 1rem;
+                margin: .5rem .5rem .5rem 0;
+                border: 1px solid $textColor;
+                border-radius: 15px;
+            }
+         }
+    }
+
     .overview {
-        padding: 1.5rem 2rem;
+        padding: 1.5rem;
         line-height: 1.4;
     }
 
-    
-
-    @include mq($desktop) {
+    @include mq($tablet) {
        
-        display: flex;
-        align-items: flex-start;
+        .movie-images {
 
-        .movie-poster {
-            width: 45%;
+            .poster {
+                width: 300px;
+                left: 12%;
+            }
+
+            .backdrop {
+                height: 500px;
+                object-fit: cover;
+            }
         }
 
         .movie-info-container {
-            width: 50%;
+            max-width: 75%;
+            margin: auto;
             
             h2 {
                 text-align: left;
+                margin: 1.5rem 0;
+                width: 80%;
             }
 
             .movie-info {
                 justify-content: flex-start;
+                margin-left: 0;
 
                 p {
                     margin: 0;
@@ -93,6 +138,12 @@
             .rating-fav-row {
                 justify-content: flex-start;
                 padding: 1rem 0;
+            }
+
+            .genres {
+                ul {
+                    padding: 0;
+                }
             }
 
             .overview {
