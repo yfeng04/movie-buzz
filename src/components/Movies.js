@@ -30,6 +30,8 @@ function Movies({ sort, pageNum, resetMovies }) {
                 setMovies(moreMovies);
                 setpreviousPage(currentPage);
             }
+
+            console.log(data.results)
         }
       
         fetchMovies();

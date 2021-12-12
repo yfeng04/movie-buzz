@@ -13,9 +13,9 @@ const PageSingle = () => {
     useEffect(() => {
 
         const fetchMovies = async () => {
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`, {
-            });
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US&append_to_response=credits`);
             let movie = await res.json();
+            
             console.log(movie);
         
             setMovie(movie);
@@ -28,7 +28,6 @@ const PageSingle = () => {
 
     return (
       <main>
-       
        {movie !== null && <SingleMovie movie={movie} />}
       </main>
     );

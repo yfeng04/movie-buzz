@@ -12,8 +12,11 @@ export const formatDate = (string) => {
 }
 
 export const convertTime = (time) => { 
-    var hours = Math.floor(time / 60);  
-    var minutes = time % 60;
+    const hours = Math.floor(time / 60);  
+    const minutes = time % 60;
     return `${hours}h ${minutes}m`;         
 };
 
+export const getStars = (number) => {
+    return number = Math.round(number)/2;
+}

@@ -1,31 +1,43 @@
 import noPoster from '../images/no-movie-poster.jpg';
+import noProfilePic from '../images/no-profile-picture.jpeg';
 import FavButton from '../components/FavButton';
-import { formatDate, formatRating, convertTime } from '../utilities/Format';
+import { formatDate, formatRating, convertTime, getStars } from '../utilities/Format';
+import ReactStars from 'react-rating-stars-component';
 
 function SingleMovie({ movie }) {
 
-    // const getGenres = (genres) => {
-    //     return genres.map((genre, i) => {
-    //      if(i === genre.length - 1){
-    //        return (<span className="make-genres-arr" key={i}>{genre.name}</span>);
-    //      }else {
-    //        return (<span className="make-genres-arr" key={i}>{genre.name}, </span>);
-    //      }
-    //     });
-    //   }
+    const displayCast = (castList) => {
+
+        const top8 = castList.filter(cast => cast.order < 8);
+    
+        return top8.map((cast, i) => {  
+          return (
+                <div className="cast-info" key={i}> 
+                    { cast.profile_path !== null ? 
+                    <img className="cast-photo" key={i} src={`https://image.tmdb.org/t/p/w300/${cast.profile_path}`} alt={cast.name} /> :          
+                    <img className="placeholder" src={noProfilePic} alt="profile placeholder" />
+                    }
+                    <div className='cast-text'> 
+                        <p className='cast-name'>{cast.name}</p>
+                        <p className='cast-char'>{cast.character}</p>
+                    </div>
+                </div>    
+            ) }
+        );
+    }
 
     return (
-        <div className="single-movie">
-            <div className="movie-images">
+        <section className="single-movie">
+            <section className="movie-images">
                 {movie.poster_path === null ? 
                     <img className="poster" src={noPoster} alt="No poster available." /> : 
                     <img className="poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                 }  
 
                 <img className="backdrop" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title}/>
-            </div>
+            </section>
             
-            <div className="movie-info-container">
+            <section className="movie-info-container">
                 <h2>{movie.title} ({movie.release_date.slice(0,4)})</h2>
                 
                 <div className="movie-info">
@@ -40,7 +52,24 @@ function SingleMovie({ movie }) {
                 </div>
 
                 <div className="rating-fav-row">
-                    <p className='rating'>{movie.vote_average !== null && formatRating(movie.vote_average)}</p>
+
+                    <div className='rating-group'>
+                        <p className='rating'>{movie.vote_average !== null && formatRating(movie.vote_average)}</p>
+
+                        <ReactStars 
+                            count={5}
+                            value={getStars(movie.vote_average)}
+                            isHalf={true}
+                            edit={false}
+                            size={16}
+                            char={""}
+                            activeColor="#ffd700"
+                            emptyIcon={<i className="far fa-star"></i>}
+                            halfIcon={<i className="fa fa-star-half-alt"></i>}
+                            filledIcon={<i className="fa fa-star"></i>}
+                        />
+                    </div>
+
                     <div className="fav-btn-container">
                         <FavButton movie={movie}/> 
                         <p>Favourite</p>
@@ -48,12 +77,20 @@ function SingleMovie({ movie }) {
                 </div>
 
                 <div className="overview">
-                {movie.overview !== null && <h3>Overview</h3>}
-                <p>{movie.overview !== null && movie.overview}</p>
+                    {movie.overview !== null && <h3>Overview</h3>}
+                    <p>{movie.overview !== null && movie.overview}</p>
+                </div>
+
+                <div className="cast">
+                    {movie.credits.cast !== null && <h3>Top Billed Cast</h3>}
+                    <div className="cast-info-container">
+                    {displayCast(movie.credits.cast)}
+                    </div>
+                   
                 </div>
                 
-            </div>
-        </div>
+            </section>
+        </section>
     )
 }
 

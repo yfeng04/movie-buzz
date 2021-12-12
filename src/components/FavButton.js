@@ -12,8 +12,8 @@ function FavButton({ movie }) {
         return globalState.favs.some((movie) => movie.id === id);
     }
 
-    const emptyheart = <i class="far fa-heart"></i>;
-    const solidheart = <i class="fas fa-heart"></i>;
+    const emptyheart = <i className="far fa-heart"></i>;
+    const solidheart = <i className="fas fa-heart"></i>;
 
     return (
         <>

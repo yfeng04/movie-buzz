@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from '../components/FavButton';
-import { formatDate, formatRating } from '../utilities/Format';
+import { formatDate, formatRating, getStars } from '../utilities/Format';
+import ReactStars from 'react-rating-stars-component'
 
 function MovieCard({ movie }) {
 
@@ -20,8 +21,21 @@ function MovieCard({ movie }) {
             <div className="movie-info-container">
                 <div className="movie-info">
                     <h3>{movie.title}</h3>
-                    <div className="date-rating-row">
-                        <p>{movie.release_date ? formatDate(movie.release_date) : "Released date is not available"}</p>
+                    <p>{movie.release_date ? formatDate(movie.release_date) : "Released date is not available"}</p>
+
+                    <div className="rating-row">
+                        <ReactStars 
+                            count={5}
+                            value={getStars(movie.vote_average)}
+                            isHalf={true}
+                            edit={false}
+                            size={16}
+                            char={""}
+                            activeColor="#ffd700"
+                            emptyIcon={<i className="far fa-star"></i>}
+                            halfIcon={<i className="fa fa-star-half-alt"></i>}
+                            filledIcon={<i className="fa fa-star"></i>}
+                        />
                         <p className="rating">{movie.vote_average !== null && formatRating(movie.vote_average)}</p>
                     </div>
                    

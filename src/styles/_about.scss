@@ -39,7 +39,7 @@
 
     @include mq($tablet) {
         .about-text {
-            width: 50%;
+            max-width: 40%;
         }
 
     }
