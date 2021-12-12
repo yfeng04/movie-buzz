@@ -43,8 +43,8 @@ nav {
             font-size: 1.5rem;
             cursor: pointer;
             position: absolute;
-            right: 1rem;
-            top: -6.5rem;
+            right: 1.2rem;
+            top: -6rem;
         }
 
         ul {
@@ -71,6 +71,8 @@ nav {
     }
 
     @include mq($tablet) {
+
+        margin: .5rem 0;
 
         .mobile-navigation {
             display: none;
@@ -153,7 +155,13 @@ select {
 
     @include mq($tablet) {
 
-        margin-left: 2rem;
+        margin-left: 3rem;
+
+    }
+
+    @include mq($desktop) {
+
+        margin-left: 4rem;
         width: 250px;
 
     }

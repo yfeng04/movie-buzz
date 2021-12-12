@@ -6,7 +6,7 @@
     }
 
     h2 {
-        margin-top: 3rem;
+        margin-top: 0;
     }
 
     .about-title i {
@@ -40,6 +40,10 @@
     @include mq($tablet) {
         .about-text {
             max-width: 40%;
+        }
+
+        h2 {
+            margin-top: 2rem;
         }
 
     }

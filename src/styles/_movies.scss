@@ -74,8 +74,9 @@
     @include mq($tablet) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: em(14);
+        gap: 1rem;
         margin-bottom: 0;
+        padding: 1rem 2rem;
 
         //movie card desktop styling
         .movie-card {
@@ -137,7 +138,7 @@
     }
 
     @include mq($desktop) {
-        padding: em(20);
+        padding: 1.5rem 4rem;
         grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
     }

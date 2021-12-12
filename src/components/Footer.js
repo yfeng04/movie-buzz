@@ -8,7 +8,7 @@ function Footer() {
 
             <div className='footer-text'>
                 <p>&copy; {new Date().getFullYear()} Movie Buzz </p>
-                <p>Author: Yingying Feng</p>
+                <p>Created by Yingying Feng</p>
             </div>
         
         </footer>
