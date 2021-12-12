@@ -42,21 +42,13 @@ body {
 // Layout
 .wrapper {
     max-width: 120rem;
-    min-height: 100vh;
     margin: 0 auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-
-    // @include mq($tablet){
-    //     padding: 0 1rem;
-    // }
-
 }
 
 .content {
     flex: 1 0 auto;
-}
-
-footer{
-    margin-top: auto;
+    margin-bottom: 3rem;
 }

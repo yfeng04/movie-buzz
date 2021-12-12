@@ -27,9 +27,9 @@ const PageSingle = () => {
 
 
     return (
-      <main>
+      <>
        {movie !== null && <SingleMovie movie={movie} />}
-      </main>
+      </>
     );
   }
   

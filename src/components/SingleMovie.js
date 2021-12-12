@@ -1,5 +1,5 @@
 import noPoster from '../images/no-movie-poster.jpg';
-import noProfilePic from '../images/no-profile-picture.jpeg';
+import noProfilePic from '../images/no-profile-holder.jpg';
 import FavButton from '../components/FavButton';
 import { formatDate, formatRating, convertTime, getStars } from '../utilities/Format';
 import ReactStars from 'react-rating-stars-component';

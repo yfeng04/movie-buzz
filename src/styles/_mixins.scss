@@ -1,13 +1,5 @@
 // Mixins
 
-//centering element (wrapper)
-@mixin margin-center{
-    margin: {
-        left: auto;
-        right: auto;
-    }
-}
-
 //mixin for flex layout
 //mixin for creating a flex row of evenly spaced elements
 @mixin flex-layout-row {
@@ -29,14 +21,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-
-//styles for ul
-@mixin ul-base {
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 
