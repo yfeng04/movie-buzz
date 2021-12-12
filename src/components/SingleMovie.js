@@ -8,9 +8,9 @@ function SingleMovie({ movie }) {
 
     const displayCast = (castList) => {
 
-        const top8 = castList.filter(cast => cast.order < 8);
+        const top15 = castList.filter(cast => cast.order < 15);
     
-        return top8.map((cast, i) => {  
+        return top15.map((cast, i) => {  
           return (
                 <div className="cast-info" key={i}> 
                     { cast.profile_path !== null ? 

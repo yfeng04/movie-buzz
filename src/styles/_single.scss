@@ -108,29 +108,54 @@
     }
 
     .cast {
-        padding: 0 1.5rem;
 
+        padding: 0 1.5rem;
+        
         .cast-info-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-column-gap: .5rem;
-            grid-row-gap: 1rem;
+            display: flex;
+            column-gap: 1rem;
+            overflow-x: scroll;
+            padding-bottom: 1rem;
 
             .cast-photo, .placeholder {
                 border-radius: 10px;
-                max-width: 100px;
-            }
-
-            .cast-name {
-                font-weight: 700;
-            }
-
-            .cast-char {
-                font-weight: 300;
+                max-width: 120px;
             }
 
             .cast-info {
-                justify-self: center;
+
+                .cast-name {
+                    font-weight: 700;
+                    max-width: 120px;
+                }
+    
+                .cast-char {
+                    font-weight: 300;
+                    max-width: 120px;
+                }
+            }
+
+            //styling the horizontal scrollbar
+            &::-webkit-scrollbar {  
+                height: 10px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background: #333;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: #555; 
+                border-radius: 10px;
+
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: #777; 
             }
     
         }
@@ -139,7 +164,7 @@
 
 
 
-// Desktop styling
+// Tablet styling
     @include mq($tablet) {
        
         .movie-images {
@@ -193,21 +218,32 @@
                 padding: 1.5rem 1.5rem 1.5rem 0;
             }
 
+
             .cast {
                 padding: 0;
-
+    
                 .cast-info-container {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-column-gap: 1rem;
-                    grid-row-gap: 1rem;
+                    display: flex;
+                    column-gap: 1rem;
+                    overflow-x: scroll;
+    
+                    .cast-photo, .placeholder {
+                        max-width: 150px;
+                    }
+    
+                    .cast-info {
+    
+                        .cast-text {
+                            max-width: 150px;
+                        }
+                    }
             
                 }
             }
-
-            
+           
         }
         
     }
+
     
 }
