@@ -8,7 +8,7 @@
         display: grid;
         grid-template-columns: 35% 63%;
         gap: 1rem;
-        margin: 1.5rem 0;
+        margin: 2rem 0;
 
         img {
             border-radius: 5px;
@@ -82,6 +82,7 @@
             display: block;
             background: rgb(3, 3, 3);
             background: linear-gradient(0deg, rgba(3, 3, 3, 1) 0%, rgba(255, 252, 252, 1) 100%);
+            margin: 1rem 0;
 
             img {
                 width: 100%;
@@ -92,11 +93,20 @@
                 border-top-right-radius: 10px;
             }
 
-            .movie-info {
-                padding: .5rem .5rem 1rem;
-
-                h3, p {
+            .movie-info-container {
+                p {
                     font-size: 1rem;
+                }
+    
+                .movie-info {
+                    padding: .5rem .5rem 1rem;
+    
+                }
+
+                .more-info-btn {
+                    margin-top: 2rem;
+                    width: 100px;
+                    border: 2px solid white;
                 }
             }
 
@@ -115,7 +125,6 @@
 
                 .overlay-text {
                     padding: 3rem 1rem;
-                    line-height: 1.4;
                 }
             }
 
@@ -123,10 +132,6 @@
                 opacity: 1;
             }
 
-            .more-info-btn {
-                position: absolute;
-                bottom: 8rem;
-            }
         }
 
     }
@@ -138,6 +143,9 @@
     }
 
 }
+
+
+
 
 
 // Load More button

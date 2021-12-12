@@ -39,7 +39,7 @@ const PageSearch = () => {
                 autoFocus/>
             </form>   
 
-            {searchResults.length === 0 ? 
+            {searchResults.length === 0 & text !== "" ? 
                 (<p className="no-results">No results</p>) : 
                 (<section className="movies-container"> 
                     {searchResults.map(movie => <MovieCard key={movie.id} movie={movie} isFav={false} />)} 
