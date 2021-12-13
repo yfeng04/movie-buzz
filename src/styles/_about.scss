@@ -11,10 +11,10 @@
 
     .about-title i {
         // code below were generated from https://www.cssportal.com/css-text-gradient-generator/
-        background: #FF33FF;
-        background: -webkit-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
-        background: -moz-linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
-        background: linear-gradient(to bottom right, #FF33FF 0%, #33FFFF 100%);
+        background: -webkit-linear-gradient(to bottom right, #FF33FF 20%, #33FFFF 100%);
+        background: -moz-linear-gradient(to bottom right, #FF33FF 20%, #33FFFF 100%);
+        background: linear-gradient(to bottom right, #FF33FF 20%, #33FFFF 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -43,7 +43,7 @@
         }
 
         h2 {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
     }

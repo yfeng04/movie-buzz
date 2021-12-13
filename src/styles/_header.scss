@@ -5,8 +5,8 @@ header {
 
     .logo {
         width: 100px;
-        transition: all .5s ease;
-        margin-left: 1rem;
+        transition: all .4s ease-in-out;
+        margin: 1rem 0 0 1.5rem;
 
         &:hover {
             transform: scale(1.05);
@@ -20,18 +20,19 @@ header {
 
     @include mq($tablet){
         padding: .5rem 2rem 1.5rem;
-        @include flex-layout-row;
-        flex-wrap: nowrap;
+        display: flex;
+        justify-content: space-between;
         align-items: flex-end;
 
         .logo {
             width: 120px;
+            margin: 1rem;
         }
         
     }
 
     @include mq($desktop){
-        padding: .5rem 3rem 1.5rem;
+        padding: .5rem 3rem 3rem;
         
     }
 

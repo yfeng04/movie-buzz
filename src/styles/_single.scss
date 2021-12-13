@@ -177,12 +177,12 @@
         .movie-images {
 
             .poster {
-                width: 300px;
+                max-width: 300px;
                 left: 12%;
             }
 
             .backdrop {
-                height: 500px;
+                max-height: 520px;
                 object-fit: cover;
             }
         }

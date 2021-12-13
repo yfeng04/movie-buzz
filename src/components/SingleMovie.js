@@ -1,5 +1,6 @@
 import noPoster from '../images/no-movie-poster.jpg';
 import noProfilePic from '../images/no-profile-holder.jpg';
+import noBackdrop from '../images/backdrop-placeholder.png'
 import FavButton from '../components/FavButton';
 import { formatDate, formatRating, convertTime, getStars } from '../utilities/Format';
 import ReactStars from 'react-rating-stars-component';
@@ -34,7 +35,10 @@ function SingleMovie({ movie }) {
                     <img className="poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                 }  
 
-                <img className="backdrop" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title}/>
+                {movie.backdrop_path === null ?
+                 <img className="backdrop" src={noBackdrop} alt="No backdrop available." /> : 
+                 <img className="backdrop" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title}/>}
+               
             </section>
             
             <section className="movie-info-container">
@@ -76,18 +80,23 @@ function SingleMovie({ movie }) {
                     </div>
                 </div>
 
-                <div className="overview">
-                    {movie.overview !== null && <h3>Overview</h3>}
-                    <p>{movie.overview !== null && movie.overview}</p>
-                </div>
-
-                <div className="cast">
-                    {movie.credits.cast !== null && <h3>Top Billed Cast</h3>}
-                    <div className="cast-info-container">
-                    {displayCast(movie.credits.cast)}
+                {movie.overview !== "" && (
+                    <div className="overview">
+                        <h3>Overview</h3>
+                        <p>{movie.overview}</p>
                     </div>
-                   
-                </div>
+                )}
+
+                {movie.credits.cast.length !== 0 && (
+                    <div className="cast">
+                        <h3>Cast</h3>
+                        <div className="cast-info-container">
+                            {displayCast(movie.credits.cast)}
+                        </div>
+                    </div>
+                )}
+
+                
                 
             </section>
         </section>

@@ -2,9 +2,27 @@ import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from '../components/FavButton';
 import { formatDate, formatRating, getStars } from '../utilities/Format';
-import ReactStars from 'react-rating-stars-component'
+import ReactStars from 'react-rating-stars-component';
+import { useMediaQuery } from 'react-responsive'
 
 function MovieCard({ movie }) {
+
+    const isTabletOrDesktop = useMediaQuery({ query: '(min-width: 768px)'});
+
+    const overviewExcerpt = (overview) => {
+
+        if (isTabletOrDesktop){
+            if (overview.length > 210) {
+                return <p>{overview.split(' ').slice(0, 50).join(' ')}...</p>;
+            } else {
+                return <p>{overview}</p>;
+            }
+        } else {
+            return <p>{overview.split(' ').slice(0, 15).join(' ')}...</p>;
+        }
+
+        
+    }
 
     return (
         <div className="movie-card">
@@ -43,8 +61,7 @@ function MovieCard({ movie }) {
 
                 <div className="overlay">
                     <div className="overlay-text">
-                        <p>{movie.overview.length > 280 ?
-                        `${movie.overview.split(' ').slice(0, 50).join(' ')}...` : movie.overview}</p>
+                        {overviewExcerpt(movie.overview)}
                         <Link className ="more-info-btn" to={`/single-movie/${movie.id}`}><p>More Info</p></Link>
                     </div>
                 </div>

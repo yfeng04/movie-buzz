@@ -10,9 +10,14 @@
         line-height: 1.5;
     }
 
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    }
+
     @include mq($tablet) {
         h2 {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
     }
