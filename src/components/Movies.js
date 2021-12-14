@@ -5,7 +5,7 @@ import { API_TOKEN } from '../globals/globals';
 
 function Movies({ sort, pageNum, resetMovies }) {
     const [movies, setMovies] = useState([]);
-    const [previousPage, setpreviousPage] = useState("");
+    const [previousPage, setPreviousPage] = useState("");
     let currentPage  = useLocation();
 
     useEffect(()=>{
@@ -23,15 +23,15 @@ function Movies({ sort, pageNum, resetMovies }) {
             if(currentPage.pathname !== previousPage.pathname){
                 resetMovies();
                 setMovies(data.results);
-                setpreviousPage(currentPage);
+                setPreviousPage(currentPage);
 
             } else {
                 const moreMovies = [...movies, ...data.results];
                 setMovies(moreMovies);
-                setpreviousPage(currentPage);
+                setPreviousPage(currentPage);
             }
 
-            console.log(data.results)
+            //console.log(data.results)
         }
       
         fetchMovies();

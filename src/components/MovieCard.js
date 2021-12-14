@@ -49,7 +49,7 @@ function MovieCard({ movie }) {
                             edit={false}
                             size={16}
                             char={""}
-                            activeColor="#ffd700"
+                            activeColor="#FFCC00"
                             emptyIcon={<i className="far fa-star"></i>}
                             halfIcon={<i className="fa fa-star-half-alt"></i>}
                             filledIcon={<i className="fa fa-star"></i>}

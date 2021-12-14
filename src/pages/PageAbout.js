@@ -6,7 +6,7 @@ function PageAbout() {
     return (
         <section className="about-page">
             <div className="about-title">
-                <h2>Hi there! <i class="fas fa-eye"></i></h2>
+                <h2>Hi there! <i className="fas fa-eye"></i></h2>
             </div>
             <div className="about-text">
                 <p>Welcome to Movie Buzz!</p>

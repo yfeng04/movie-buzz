@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import NavBar from './NavBar';
+import Navigation from './Navigation';
+import MobileNavigation from './MobileNavigation';
 import logo from '../images/logo.png';
 
 function Header() {
@@ -7,7 +8,10 @@ function Header() {
     return (
         <header>
             <Link to='/'><img className="logo" src={logo} alt="Site Logo" /></Link>
-            <NavBar />
+            <div className='nav-bar'>
+                <MobileNavigation />
+                <Navigation />
+            </div>
         </header>
     )
 }

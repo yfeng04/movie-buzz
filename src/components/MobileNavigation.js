@@ -13,9 +13,9 @@ const MobileNavigation = () => {
     }
     
     return (
-        <nav className='mobile-navigation'>
+        <nav className='mobile-navigation' onClick={closeMenu}>
             {open ? closeicon : hamburger}
-            {open && <NavMain closeMenu = {closeMenu}/>}
+            {open && <NavMain />}
         </nav>
     );
 }
