@@ -2,7 +2,7 @@ export const formatRating = (rating) => {
     if (rating.toString().length === 1){
         return rating.toString()+ ".0";
     } else {
-        return rating;
+        return rating.toFixed(1);
     }
 }
 

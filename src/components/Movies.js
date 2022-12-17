@@ -19,6 +19,7 @@ function Movies({ sort, pageNum, resetMovies }) {
                     }
             });
             const data = await result.json();
+            console.log(data.results)
 
             if(currentPage.pathname !== previousPage.pathname){
                 resetMovies();
@@ -30,8 +31,6 @@ function Movies({ sort, pageNum, resetMovies }) {
                 setMovies(moreMovies);
                 setPreviousPage(currentPage);
             }
-
-            //console.log(data.results)
         }
       
         fetchMovies();
