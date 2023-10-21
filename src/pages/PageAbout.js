@@ -1,4 +1,3 @@
-import React from "react";
 import tmdbIcon from '../images/tmdb.svg';
 
 function PageAbout() {

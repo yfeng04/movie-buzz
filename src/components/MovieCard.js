@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from '../components/FavButton';

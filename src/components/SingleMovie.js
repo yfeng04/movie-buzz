@@ -1,4 +1,3 @@
-import React from "react";
 import noPoster from '../images/no-movie-poster.jpg';
 import noProfilePic from '../images/no-profile-holder.jpg';
 import noBackdrop from '../images/backdrop-placeholder.png'
