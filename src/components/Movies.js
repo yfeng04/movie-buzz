@@ -1,3 +1,4 @@
+import React from "react";
 import MovieCard from './MovieCard';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';

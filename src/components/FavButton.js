@@ -1,3 +1,4 @@
+import React from "react";
 import useGlobal from '../store/globalAppState';
 
 function FavButton({ movie }) {

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react';
 import NavSort from '../components/NavSort';
 import Movies from '../components/Movies';

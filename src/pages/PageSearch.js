@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from 'react';
 import { API_KEY } from '../globals/globals';
 import MovieCard from '../components/MovieCard';
